@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "566860750618",
+    "project_id": "glowbeacon-firebase",
+    "storage_bucket": "glowbeacon-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566860750618:android:691fe3b438d205c5ae16a3",
+        "android_client_info": {
+          "package_name": "com.example.glowbeacon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566860750618-fnk59nijtb69r9r0hsoud94qeeb5olcq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.glowbeacon",
+            "certificate_hash": "28bdeff962533567e8d54a25deaa8b068dcac0eb"
+          }
+        },
+        {
+          "client_id": "566860750618-jgpdt6p94jbe0l6300u4rtcj3aedekuq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClyPXrV-ZkiCewLvPKKcAVQ-9LQP7iuuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566860750618-jgpdt6p94jbe0l6300u4rtcj3aedekuq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
