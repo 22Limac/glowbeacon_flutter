@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class HelperFunctions {
   static String userLoggedInKey = "LOGGEDINKEY";
   static String userNameKey = "USERNAMEKEY";
+  static String fullNameKey = "FULLNAMEKEY";
   static String userEmailKey = "USEREMAILKEY";
 
   // saving data to SF
@@ -14,6 +15,11 @@ class HelperFunctions {
   static Future<bool> saveUserNameSF(String userName) async {
     SharedPreferences sf = await SharedPreferences.getInstance();
     return sf.setString(userNameKey, userName);
+  }
+  
+  static Future<bool> saveFullNameSF(String fullName) async {
+    SharedPreferences sf = await SharedPreferences.getInstance();
+    return sf.setString(fullNameKey, fullName);
   }
 
   static Future<bool> saveUserEmailSF(String userEmail) async {

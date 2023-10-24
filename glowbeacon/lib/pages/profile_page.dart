@@ -3,6 +3,7 @@ import 'package:glowbeacon/helper/helper_function.dart';
 import 'package:glowbeacon/pages/auth/login_page.dart';
 import 'package:glowbeacon/service/auth_service.dart';
 import 'package:glowbeacon/shared/constants.dart';
+import 'package:glowbeacon/shared/user_data.dart';
 import 'package:glowbeacon/widgets/widgets.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -62,11 +63,17 @@ class ProfilePageState extends State<ProfilePage> {
                   CircleAvatar(
                     radius: 40,
                   ),
-                  Text(
-                    _userName!,
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        _userName!,
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(UserData().followers!.length.toString()),
+                    ],
                   )
                 ],
               ),

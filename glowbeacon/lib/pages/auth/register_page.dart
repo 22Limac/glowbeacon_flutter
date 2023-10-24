@@ -19,6 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
   String email = "";
   String password = "";
   String fullName = "";
+  String username = "";
   AuthService authService = AuthService();
 
   @override
@@ -54,6 +55,31 @@ class _RegisterPageState extends State<RegisterPage> {
                           setState(() {
                             fullName = val;
                             print(fullName);
+                          });
+                        },
+                        validator: (val) {
+                          if (val!.isNotEmpty) {
+                            return null;
+                          } else {
+                            return "Name cannot be empty";
+                          }
+                        },
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      // Username Input
+                      TextFormField(
+                        decoration: textInputDecoration.copyWith(
+                            labelText: "Username",
+                            prefixIcon: Icon(
+                              Icons.person_2,
+                              color: Theme.of(context).primaryColor,
+                            )),
+                        onChanged: (val) {
+                          setState(() {
+                            username = val;
+                            print(username);
                           });
                         },
                         validator: (val) {
@@ -168,13 +194,14 @@ class _RegisterPageState extends State<RegisterPage> {
       });
 
       await authService
-          .registerUserWithEmailAndPassword(fullName, email, password)
+          .registerUserWithEmailAndPassword(username, fullName, email, password)
           .then((value) async {
         if (value == true) {
           // saving shared preference state
           await HelperFunctions.saveUserLoggedInStatus(true);
-          await HelperFunctions.saveUserNameSF(fullName);
+          await HelperFunctions.saveFullNameSF(fullName);
           await HelperFunctions.saveUserEmailSF(email);
+          await HelperFunctions.saveUserEmailSF(username);
           nextScreenReplace(context, HomePage());
         } else {
           showSnackbar(context, Colors.red, value);
