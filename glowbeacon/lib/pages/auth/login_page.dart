@@ -178,8 +178,7 @@ class _LoginPageState extends State<LoginPage> {
             followers: followersList,
             following: followingList,
           );
-          // print("SNAPSHOT: ");
-          // print(snapshot.docs[0]["followers"]);
+          
 
           nextScreenReplace(context, HomePage());
         } else {

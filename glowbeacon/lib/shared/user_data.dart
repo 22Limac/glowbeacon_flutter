@@ -17,6 +17,7 @@ class UserData {
   String? uid;
   List<String>? followers;
   List<String>? following;
+  bool initialized = false;
   // ... add other fields as needed
 
   // Method to set user data
@@ -35,6 +36,7 @@ class UserData {
     this.uid = uid;
     this.followers = followers;
     this.following = following;
+    initialized = true;
     // ... set other fields
   }
 

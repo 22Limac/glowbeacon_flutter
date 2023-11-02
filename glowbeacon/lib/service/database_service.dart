@@ -15,7 +15,6 @@ class DatabaseService {
       "profilePicture": "",
       "uid": uid,
       "username": username,
-      
     });
   }
 
@@ -23,5 +22,9 @@ class DatabaseService {
     QuerySnapshot snapshot =
         await userCollection.where("email", isEqualTo: email).get();
     return snapshot;
+  }
+
+  Stream<QuerySnapshot> getUserPostsByUid() {
+    return userCollection.doc(uid).collection('posts').snapshots();
   }
 }
